@@ -63,7 +63,7 @@ class TestLibraryMethods(unittest.TestCase):
 
     def test_add_book(self):
         """Тест добавления книги."""
-        self.add_book_use_case.execute("A Byte of Python", "Swaroop Chitlur", 2023)
+        self.add_book_use_case.execute("A Byte of Python", "Swaroop Chitlur", 2013)
         self.assertEqual(len(self.repository.books), 3)
         self.assertEqual(self.repository.books[2].title, "A Byte of Python")
         self.assertEqual(self.repository.books[2].author, "Swaroop Chitlur")
