@@ -1,5 +1,5 @@
-from application.interfaces.library_repository import LibraryRepository
-from domain.entities.book import Book
+from src.application.interfaces.library_repository import LibraryRepository
+from src.domain.entities.book import Book
 
 
 class AddBookUseCase:

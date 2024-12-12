@@ -1,5 +1,5 @@
-from application.interfaces.library_repository import LibraryRepository
-from domain.value_objects.book_status import BookStatus
+from src.application.interfaces.library_repository import LibraryRepository
+from src.domain.value_objects.book_status import BookStatus
 
 
 class ChangeBookStatusUseCase:

@@ -1,4 +1,4 @@
-from application.interfaces.library_repository import LibraryRepository
+from src.application.interfaces.library_repository import LibraryRepository
 
 
 class RemoveBookUseCase:

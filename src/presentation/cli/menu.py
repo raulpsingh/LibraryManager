@@ -1,6 +1,6 @@
-from application.dto.book_dto import BookDTO
-from application.dto.search_criteria import SearchCriteria
-from presentation.cli.messages import MESSAGES
+from src.application.dto.book_dto import BookDTO
+from src.application.dto.search_criteria import SearchCriteria
+from src.presentation.cli.messages import MESSAGES
 
 
 def display_menu(actions) -> None:

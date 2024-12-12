@@ -1,14 +1,14 @@
-from infrastructure.repositories.json_library_repository import JsonLibraryRepository
-from application.use_cases.add_book import AddBookUseCase
-from application.use_cases.change_status import ChangeBookStatusUseCase
-from application.use_cases.remove_book import RemoveBookUseCase
-from application.use_cases.search_book import SearchBookUseCase
-from presentation.cli.menu import display_menu, add_book, delete_book, search_books, display_books, change_status
+from src.application.use_cases.add_book import AddBookUseCase
+from src.application.use_cases.change_status import ChangeBookStatusUseCase
+from src.application.use_cases.remove_book import RemoveBookUseCase
+from src.application.use_cases.search_book import SearchBookUseCase
+from src.infrastructure.repositories.json_library_repository import JsonLibraryRepository
+from src.presentation.cli.menu import display_menu, add_book, delete_book, search_books, display_books, change_status
 
 
 def main():
     # Создание экземпляра репозитория с указанием пути к файлу базы данных
-    repo = JsonLibraryRepository("infrastructure/database/books.json")
+    repo = JsonLibraryRepository("src/infrastructure/database/books.json")
 
     # Инициализация сценариев использования, передача репозитория в качестве зависимости
     add_book_use_case = AddBookUseCase(repo)

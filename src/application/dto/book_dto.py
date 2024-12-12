@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from domain.entities.book import Book
+from src.domain.entities.book import Book
 
 
 @dataclass

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from domain.value_objects.book_status import BookStatus
+from src.domain.value_objects.book_status import BookStatus
 
 
 @dataclass

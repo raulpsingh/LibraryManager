@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
-from application.dto.search_criteria import SearchCriteria
-from domain.entities.book import Book
-from domain.value_objects.book_status import BookStatus
+from src.application.dto.search_criteria import SearchCriteria
+from src.domain.entities.book import Book
+from src.domain.value_objects.book_status import BookStatus
 
 
 class LibraryRepository(ABC):

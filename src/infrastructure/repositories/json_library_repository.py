@@ -1,9 +1,9 @@
 import json
 
-from application.dto.search_criteria import SearchCriteria
-from application.interfaces.library_repository import LibraryRepository
-from domain.entities.book import Book
-from domain.value_objects.book_status import BookStatus
+from src.application.dto.search_criteria import SearchCriteria
+from src.application.interfaces.library_repository import LibraryRepository
+from src.domain.entities.book import Book
+from src.domain.value_objects.book_status import BookStatus
 
 
 class JsonLibraryRepository(LibraryRepository):

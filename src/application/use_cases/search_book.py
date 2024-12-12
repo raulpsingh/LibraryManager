@@ -1,6 +1,6 @@
-from application.dto.book_dto import BookDTO
-from application.dto.search_criteria import SearchCriteria
-from application.interfaces.library_repository import LibraryRepository
+from src.application.dto.book_dto import BookDTO
+from src.application.dto.search_criteria import SearchCriteria
+from src.application.interfaces.library_repository import LibraryRepository
 
 
 class SearchBookUseCase:
