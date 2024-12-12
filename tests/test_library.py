@@ -1,13 +1,13 @@
 import unittest
 
-from src.application import SearchCriteria
-from src.application.interfaces import LibraryRepository
-from src.application import AddBookUseCase
-from src.application import ChangeBookStatusUseCase
+from src.application.dto.search_criteria import SearchCriteria
+from src.application.interfaces.library_repository import LibraryRepository
+from src.application.use_cases.add_book import AddBookUseCase
+from src.application.use_cases.change_status import ChangeBookStatusUseCase
 from src.application.use_cases.remove_book import RemoveBookUseCase
 from src.application.use_cases.search_book import SearchBookUseCase
-from src.domain.entities import Book
-from src.domain import BookStatus
+from src.domain.entities.book import Book
+from src.domain.value_objects.book_status import BookStatus
 
 
 class MockLibraryRepository(LibraryRepository):
