@@ -21,13 +21,42 @@ def display_menu(actions) -> None:
             print(MESSAGES["input_error"])
 
 
-def validate_input_is_numeric(input_to_validate: str) -> bool:
+def validate_input_is_correct_id(book_id: str) -> int:
     """
     Проверяет, что введённое значение является числом.
-    :param input_to_validate: Входная строка для проверки.
+    :param book_id: Входная строка для проверки.
     :return: True, если строка состоит из цифр, иначе False.
     """
-    return input_to_validate.isnumeric()
+
+    if not book_id.isdigit():
+        raise ValueError(MESSAGES["status_id_error"])
+    return int(book_id)
+
+
+def validate_year(year: str) -> int:
+    """
+    Проверяет, что введённое значение является корректным годом.
+    :param year: Входная строка для проверки.
+    :return: Int год.
+    """
+    if not year.isdigit():
+        raise ValueError(MESSAGES["add_year_error"])
+    year = int(year)
+    if not (868 <= year <= 2024):
+        raise ValueError(MESSAGES["year_error"])
+
+    return year
+
+
+def validate_status(status: str) -> str:
+    """
+    Проверяет, что введённое значение является корректным статусом.
+    :param status: Входная строка для проверки.
+    :return: Str статус.
+     """
+    if status.lower() not in ["в наличии", "выдана"]:
+        raise ValueError(MESSAGES["status_invalid"])
+    return status.title()
 
 
 def get_book_details() -> tuple[str, str, int]:
@@ -37,10 +66,8 @@ def get_book_details() -> tuple[str, str, int]:
     """
     title = input(MESSAGES["add_prompt_title"])
     author = input(MESSAGES["add_prompt_author"])
-    year = input(MESSAGES["add_prompt_year"])
-    if validate_input_is_numeric(year):
-        return title, author, int(year)
-    raise ValueError(MESSAGES['input_error'])
+    year = validate_year(input(MESSAGES["add_prompt_year"]))
+    return title, author, year
 
 
 def get_book_id() -> int:
@@ -48,10 +75,8 @@ def get_book_id() -> int:
     Получает ID книги от пользователя.
     :return: ID книги.
     """
-    book_id = input(MESSAGES["prompt_id"])
-    if validate_input_is_numeric(book_id):
-        return int(book_id)
-    raise ValueError(MESSAGES['input_error'])
+    book_id = validate_input_is_correct_id(input(MESSAGES["prompt_id"]))
+    return book_id
 
 
 def get_book_status() -> str:
@@ -59,10 +84,8 @@ def get_book_status() -> str:
     Получает новый статус книги от пользователя.
     :return: Новый статус книги.
     """
-    status = input(MESSAGES["status_prompt_new"])
-    if status.lower() in ["выдана", "в наличии"]:
-        return status
-    raise ValueError(MESSAGES['input_error'])
+    status = validate_status(input(MESSAGES["status_prompt_new"]))
+    return status
 
 
 def add_book(use_case) -> None:
